@@ -9,10 +9,10 @@ import { MeetingPageComponent } from './pages/auth/meeting-page/meeting-page.com
 const routes: Routes = [
   { path: '', component: AuthLayoutComponent, children:[
     { path: '', redirectTo: 'home', pathMatch: 'full' },
-    { path: 'home', component: HomePageComponent },
-    { path: 'categories', component: CategoryPageComponent },
-    { path: 'questions', component: QuestionPageComponent },
-    { path: 'meetings', component: MeetingPageComponent },
+    { path: 'home', component: HomePageComponent, data:{ animation: 'isHome' } },
+    { path: 'categories', component: CategoryPageComponent, data:{ animation: 'isCategory' } },
+    { path: 'questions', component: QuestionPageComponent, data:{ animation: 'isQuestion' } },
+    { path: 'meetings', component: MeetingPageComponent, data:{ animation: 'isMeeting' } },
    ] },
 ];
 

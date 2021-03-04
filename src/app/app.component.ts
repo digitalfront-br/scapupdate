@@ -1,12 +1,20 @@
+import { fade } from './app-animations';
 import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'df-root',
   template: `
-    <router-outlet></router-outlet>
+    <div [@routeAnimations]="prepareRoute(outlet)" >
+    <router-outlet #outlet="outlet"></router-outlet>
+  </div>
   `,
-  styles: []
+  animations: [
+    fade
+  ]
 })
 export class AppComponent {
-  title = 'scap';
+  prepareRoute(outlet: RouterOutlet) {
+    return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
+  }
 }

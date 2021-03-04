@@ -1,17 +1,19 @@
+import { fade } from './../app-animations';
 import { Component, OnInit } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'df-auth-layout',
   template: `
-  <main class="uk-flex uk-flex-column uk-height-viewport main">
+  <main [@routeAnimations]="prepareRoute(outlet)" class="uk-flex uk-flex-column uk-height-viewport main">
     <df-header></df-header>
-    <p>auth layout</p>
-    <router-outlet></router-outlet>
+    <router-outlet  #outlet="outlet"></router-outlet>
     <df-footer></df-footer>
   </main>
   <df-sidebar></df-sidebar>
   `,
-  styles: [
+  animations: [
+    fade
   ]
 })
 export class AuthLayoutComponent implements OnInit {
@@ -19,6 +21,10 @@ export class AuthLayoutComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  prepareRoute(outlet: RouterOutlet) {
+    return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
   }
 
 }
