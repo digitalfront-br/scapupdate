@@ -1,0 +1,90 @@
+html {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.55;
+  -webkit-text-size-adjust: 100%;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+body, html {
+  background-color: $global-muted-background;
+  height: 100vh
+}
+.uk-notification-message{
+  @include hook-card-default();
+  border-radius: 3px ;
+  box-shadow: 1px 2px 3px rgba(37, 67, 90, 0.09);
+  &.uk-notification-message-danger {
+    background-color: $global-danger-background;
+    color: #fff;
+  }
+  &.uk-notification-message-success {
+    background-color: $global-success-background;
+    color: #fff;
+  }
+}
+input.uk-checkbox {
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+}
+:focus {
+  outline: none;
+    color: $global-primary-background;
+}
+.uk-offcanvas-flip  .main {
+  filter: blur(1px);
+}
+.title-fixed {
+  left: 0;
+  width: 100% !important;
+  padding: 10px 15px;
+}
+ul.uk-slider-items.uk-grid:first-child {
+  margin-left: 0
+}
+.card {
+  @include hook-card-default();
+  border-radius: 5px;
+  .card-media {
+    margin: -12px;
+  }
+  .card-title {
+    font-size: 1rem;
+  }
+}
+.footer {
+  background: linear-gradient(to top,  #fff 50%, transparent 100%);
+}
+.menu {
+  border-radius: 20px;
+  @include hook-card-default();
+  border: 1px solid rgb(199 199 199 / 48%);
+  .menu-item{
+      color: lighten($global-primary-background, 15%);
+    &.add{
+      margin-top: -20px;
+      background-color: $global-primary-background;
+      color: rgba(255,255,255,0.8);
+      box-shadow: 0 1px 20px 1px $global-primary-background;
+    }
+    &.uk-active{
+      color: $global-primary-background;
+    }
+  }
+}
+.uk-offcanvas-bar {
+  background: linear-gradient(to top right, darken($global-primary-background, 10%) 10%, $global-primary-background 100%) !important;
+}
+
+.title-section::after {
+  content: "";
+  display: block;
+  position: relative;
+  top: calc(-0.1 * 1em);
+  width: 30px;
+  margin-top: calc(5px + 0.2em);
+  border-bottom: calc(3px + 0.1em) solid $global-primary-background;
+}

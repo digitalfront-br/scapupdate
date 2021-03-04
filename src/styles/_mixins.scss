@@ -1,0 +1,12 @@
+@mixin hook-card-default() { 
+  border: none;
+  background: #fff;
+  padding: 0.5rem 0.750rem;
+  box-shadow: 0 4px 24px 0 rgb(34 41 47 / 10%);
+  border-top: 1px solid rgba(37, 67, 90, 0.09);
+  -webkit-transition: all .3s ease-in-out,background 0s,color 0s,border-color 0s;
+  transition: all .3s ease-in-out,background 0s,color 0s,border-color 0s;
+  .uk-card-header {
+    padding: 0;
+  }
+}
