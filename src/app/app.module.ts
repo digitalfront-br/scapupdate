@@ -13,6 +13,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { MeetingPageComponent } from './pages/auth/meeting-page/meeting-page.component';
+import { CardComponent } from './components/layout/card/card.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { MeetingPageComponent } from './pages/auth/meeting-page/meeting-page.com
     HeaderComponent,
     FooterComponent,
     SidebarComponent,
-    MeetingPageComponent
+    MeetingPageComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
