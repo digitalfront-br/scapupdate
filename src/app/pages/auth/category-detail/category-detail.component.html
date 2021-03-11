@@ -1,0 +1,27 @@
+<div class="uk-margin-xlarge-bottom">
+  <div *ngIf="loading">
+    <div uk-spinner></div>
+  </div>
+  <div *ngIf="data?.category">
+    <div class="uk-margin-bottom">
+      <div class="uk-background-cover uk-height-medium uk-panel uk-flex uk-flex-bottom"
+        style="background-image: url('https://scapgraphql.test/img/{{data?.category.image}}');">
+        <div class="uk-overlay-default uk-position-cover"></div>
+        <div class="uk-overlay uk-position-bottom uk-dark uk-padding-small">
+          <h1 class="uk-margin-remove uk-text-light">
+            {{ data.category.title }}
+          </h1>
+        </div>
+      </div>
+    </div>
+    <div class="uk-container">
+      <div class="uk-width-1-1">
+        <h3 class="uk-heading-bullet uk-h5 uk-text-primary">
+          Questionamentos
+        </h3>
+      </div>
+      <df-card tipo="1" *ngFor="let question of data.category.questions" [title]="question.title"></df-card>
+    </div>
+
+  </div>
+</div>

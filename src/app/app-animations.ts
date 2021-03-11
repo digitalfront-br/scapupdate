@@ -12,9 +12,8 @@ import {
     query(':enter', 
     animate('100ms ease-out',
       style({
-        background: 'orange',
-        opacity: 1,
-        transform: 'scale(1) translateY(0) translateX(0)',
+        opacity: 0,
+        transform: 'scale(1) translateY(10px) translateX(100px)',
       })),
       { optional: true }
     ),
@@ -22,7 +21,7 @@ import {
       animate('400ms ease-in',
         style({
           opacity: 0,
-          transform: 'scale(2) translateY(10px) translateX(0)',
+          transform: 'scale(1.1) translateY(10px) translateX(-100px)',
         })),
         { optional: true }
     )

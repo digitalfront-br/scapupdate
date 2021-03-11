@@ -1,0 +1,10 @@
+<div class="uk-container uk-margin-xlarge-bottom" >
+  <div *ngIf="loading">
+    <div uk-spinner></div>
+  </div>
+  <div *ngIf="data?.question">
+    {{ data.question.id }} - 
+    {{ data.question.title }}
+    <df-card tipo="1" *ngFor="let question of data.question.questions" [title]="question.title" ></df-card>
+  </div>
+</div>

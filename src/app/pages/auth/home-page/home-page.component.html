@@ -1,1 +1,11 @@
-<p>home-page works!</p>
+<div class="uk-container uk-width-1-1 uk-margin-xlarge-bottom" >
+  <div *ngIf="loading">
+    <div uk-spinner></div>
+  </div>
+  <div *ngIf="personValues?.personValues" class="uk-child-width-auto uk-grid-small uk-text-center uk-flex-center" uk-grid>
+    <df-card *ngFor="let item of personValues.personValues.data"
+    tipo="1"
+    [id]="item.id"
+    [title]="item.title"></df-card>
+  </div>
+</div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'df-card',
@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 export class CardComponent implements OnInit {
+  @Input() id: String;
+  @Input() title: String;
+  @Input() link: String;
+  @Input() image: String;
+  @Input() tipo: Number;
 
   constructor() { }
 

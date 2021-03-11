@@ -1,1 +1,22 @@
-<p>card works!</p>
+<div [ngSwitch]="tipo">
+  <div *ngSwitchCase="1"   class="uk-card uk-margin-small uk-padding-xxsmall uk-card-default uk-border-rounded uk-width-auto">
+    <p [routerLink]="link"   class="uk-margin-remove">{{ title }}</p>
+  </div>
+  <div *ngSwitchCase="2"  [class.uk-card-primary]="!id" (click)="!id"  class="uk-card uk-margin-small uk-padding-small uk-card-default uk-border-rounded">
+    <small class="uk-text-small">{{ title }}</small>
+  </div>
+  <div *ngSwitchCase="3">
+    <div [routerLink]="link" class="uk-card uk-card-small uk-card-default uk-margin-small uk-border-rounded">
+        <div class="uk-card-media-top">
+            <img [src]="image" alt="">
+        </div>
+        <div class="uk-padding-small">
+            <h5 class="uk-h5 uk-margin-remove uk-text-center">{{ title }}</h5>
+        </div>
+    </div>
+</div>
+  <div *ngSwitchCase="4"  [class.uk-card-primary]="!id" (click)="!id"  class="uk-card uk-margin-small uk-padding-small uk-card-default uk-border-rounded">
+    <small class="uk-text-small">{{ title }}</small>
+  </div>
+  <div *ngSwitchDefault>output2</div>
+</div>

@@ -10,7 +10,7 @@ html {
 }
 body, html {
   background-color: $global-muted-background;
-  height: 100vh
+  min-height: 100vh
 }
 .uk-notification-message{
   @include hook-card-default();
@@ -56,7 +56,16 @@ ul.uk-slider-items.uk-grid:first-child {
   }
 }
 .footer {
-  background: linear-gradient(to top,  #fff 50%, transparent 100%);
+  background: linear-gradient(to top,  #fff 70%, transparent 100%);
+}
+.uk-overlay-default {
+  background: linear-gradient( 360deg , #edf2f4 10%, #0000 60%) !important;
+  bottom: -1px !important;
+  left: -1px !important;
+  right: -1px !important;
+}
+.uk-heading-bullet::before{
+  border-color: #b7b4f2 !important;
 }
 .menu {
   border-radius: 20px;
@@ -65,15 +74,31 @@ ul.uk-slider-items.uk-grid:first-child {
   .menu-item{
       color: lighten($global-primary-background, 15%);
     &.add{
+      margin-top: 0;
+      padding: 5px;
+      background-color: $global-primary-background;
+      color: rgba(255,255,255,0.8);
+      box-shadow: none;
+      transform: scale(1);
+    }
+    &.check{
       margin-top: -20px;
+      // padding: 15px;
       background-color: $global-primary-background;
       color: rgba(255,255,255,0.8);
       box-shadow: 0 1px 20px 1px $global-primary-background;
+      transform: scale(1);
     }
     &.uk-active{
       color: $global-primary-background;
     }
   }
+}
+.uk-padding-xsmall {
+  padding: 3px 10px;
+}
+.uk-padding-xxsmall {
+  padding: 5px 10px;
 }
 .uk-offcanvas-bar {
   background: linear-gradient(to top right, darken($global-primary-background, 10%) 10%, $global-primary-background 100%) !important;

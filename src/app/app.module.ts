@@ -14,6 +14,10 @@ import { FooterComponent } from './components/footer/footer.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { MeetingPageComponent } from './pages/auth/meeting-page/meeting-page.component';
 import { CardComponent } from './components/layout/card/card.component';
+import { GraphQLModule } from './graphql.module';
+import { HttpClientModule } from '@angular/common/http';
+import { CategoryDetailComponent } from './pages/auth/category-detail/category-detail.component';
+import { QuestionDetailComponent } from './pages/auth/question-detail/question-detail.component';
 
 @NgModule({
   declarations: [
@@ -27,13 +31,17 @@ import { CardComponent } from './components/layout/card/card.component';
     FooterComponent,
     SidebarComponent,
     MeetingPageComponent,
-    CardComponent
+    CardComponent,
+    CategoryDetailComponent,
+    QuestionDetailComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    GraphQLModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
