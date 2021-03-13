@@ -1,0 +1,48 @@
+<div class="uk-card uk-card-body uk-flex uk-flex-column uk-text-center uk-flex-around uk-height-viewport">
+  <div>
+
+      <form #userLogin="ngForm" (ngSubmit)="onSubmit(userLogin.value)">
+          <div class="uk-margin">
+            <h1>
+              <span class="uk-text-primary">.</span>scap
+            </h1>
+          </div>
+          <div class="uk-margin">
+              <div class="uk-inline uk-width-1-1">
+                  <span class="uk-form-icon" uk-icon="icon: user"></span>
+                  <input ngModel name="name" class="uk-input uk-box-shadow-small uk-border-rounded" placeholder="Nome" type="text"
+                      required>
+              </div>
+          </div>
+          <div class="uk-margin">
+              <div class="uk-inline uk-width-1-1">
+                  <span class="uk-form-icon" uk-icon="icon: phone"></span>
+                  <input ngModel name="phone" class="uk-input uk-box-shadow-small uk-border-rounded" placeholder="Telefone" type="text"
+                      required>
+              </div>
+          </div>
+          <div class="uk-margin">
+              <div class="uk-inline uk-width-1-1">
+                  <span class="uk-form-icon" uk-icon="icon: mail"></span>
+                  <input ngModel name="email" class="uk-input uk-box-shadow-small uk-border-rounded" placeholder="Email" type="email"
+                      required>
+              </div>
+          </div>
+          <div class="uk-margin">
+              <div class="uk-inline uk-width-1-1">
+                  <span class="uk-form-icon" uk-icon="icon: lock"></span>
+                  <input ngModel name="password" class="uk-input uk-box-shadow-small uk-border-rounded" placeholder="Senha"
+                      type="password" min="6" required>
+              </div>
+          </div>
+          <div class="uk-margin">
+              <button type="submit" [disabled]="disableBtn"
+                  class="uk-button uk-button-primary uk-border-rounded uk-width-1-1 uk-box-shadow-small">Criar Conta</button>
+          </div>
+      </form>
+      <div class="uk-margin">
+          <button class="uk-button uk-button-text uk-width-1-1 uk-border-rounded uk-link" [disabled]="disableBtn"
+              routerLink="/login">Fazer Login</button>
+      </div>
+  </div>
+</div>

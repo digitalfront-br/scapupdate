@@ -88,6 +88,7 @@ ul.uk-slider-items.uk-grid:first-child {
       color: rgba(255,255,255,0.8);
       box-shadow: 0 1px 20px 1px $global-primary-background;
       transform: scale(1);
+      margin-left: -15px;
     }
     &.uk-active{
       color: $global-primary-background;

@@ -18,6 +18,14 @@ import { GraphQLModule } from './graphql.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CategoryDetailComponent } from './pages/auth/category-detail/category-detail.component';
 import { QuestionDetailComponent } from './pages/auth/question-detail/question-detail.component';
+import { LoginPageComponent } from './pages/guest/login-page/login-page.component';
+import { ForgotPageComponent } from './pages/guest/forgot-page/forgot-page.component';
+import { RegisterPageComponent } from './pages/guest/register-page/register-page.component';
+import { ValuePageComponent } from './pages/auth/value-page/value-page.component';
+import { MoviePageComponent } from './pages/auth/movie-page/movie-page.component';
+import { BookPageComponent } from './pages/auth/book-page/book-page.component';
+import { BookPageDetailComponent } from './pages/auth/book-page-detail/book-page-detail.component';
+import { MoviePageDetailComponent } from './pages/auth/movie-page-detail/movie-page-detail.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +41,15 @@ import { QuestionDetailComponent } from './pages/auth/question-detail/question-d
     MeetingPageComponent,
     CardComponent,
     CategoryDetailComponent,
-    QuestionDetailComponent
+    QuestionDetailComponent,
+    LoginPageComponent,
+    ForgotPageComponent,
+    RegisterPageComponent,
+    ValuePageComponent,
+    MoviePageComponent,
+    BookPageComponent,
+    BookPageDetailComponent,
+    MoviePageDetailComponent
   ],
   imports: [
     BrowserModule,

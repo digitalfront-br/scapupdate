@@ -2,50 +2,40 @@ import { Apollo, gql } from 'apollo-angular';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'df-sidebar',
-  templateUrl: './sidebar.component.html',
+  selector: 'df-value-page',
+  templateUrl: './value-page.component.html',
   styles: [
   ]
 })
-export class SidebarComponent implements OnInit {
+export class ValuePageComponent implements OnInit {
 
   constructor(private apollo: Apollo) { }
 
   public loading = true;
-  public data;
+  public personValues;
 
   ngOnInit(): void {
-    this.loadData();
+    this.loadPersonValue();
   }
 
-  loadData() {
+  loadPersonValue() {
     this.apollo.query({
       query: gql`
       { 
-        me{
-          name
-          profile_photo_url
-          meetings{
+        personValues(first: 30){
+          data{
+            id
             title
-            questions{
-              title
-            }
           }
         }
       }
       `
     }).subscribe((res) => {
-      console.log(res.data)
-      this.data = res.data
+      this.personValues = res.data
       this.loading = res.loading
     },(error) => {
       console.log(error);
     });
-  }
-  
-  checkout() {
-    window.sessionStorage.removeItem('user')
-    window.location.reload();
   }
 
 }

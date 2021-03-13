@@ -2,6 +2,29 @@
   <div class="uk-offcanvas-bar">
 
       <button class="uk-offcanvas-close" type="button" uk-close></button>
-asdasd
+      
+        <ul class="uk-margin-top uk-nav uk-nav-default">
+          <li *ngIf="data?.me">
+            <div class="uk-grid-small uk-flex-bottom" uk-grid>
+              <div class="uk-width-auto">
+                <img class="uk-border-circle" width="50" height="50" src="{{ data.me.profile_photo_url}}">
+              </div>
+              <div class="uk-width-expand">
+                <h3 class="uk-h5 uk-text-bold uk-margin-remove-bottom uk-text-truncate">{{ data.me.name }}</h3>
+                <p class="uk-text-meta uk-text-small uk-margin-remove-top">Usuário registrado</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <button class="uk-button uk-button-danger uk-button-small uk-border-rounded uk-width-1-1 uk-margin-top" (click)="checkout()">Sair</button>
+          </li>
+        </ul>
+        <!-- <ng-container *ngIf="questions?.length > 0">
+          <hr>
+          <ul  class="uk-nav uk-nav-default">
+            <li  class="uk-nav-header uk-flex uk-flex-between"><span>Questionamentos</span> <span>{{ questions?.length }}</span></li>
+            <li *ngFor="let question of questions; let i = index" class="uk-text-truncate"><span class="uk-text-small">{{ i + 1 }} - </span> {{ question.title }}</li>
+          </ul>
+        </ng-container> -->
   </div>
 </div>

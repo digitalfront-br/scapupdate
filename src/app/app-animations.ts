@@ -13,7 +13,7 @@ import {
     animate('100ms ease-out',
       style({
         opacity: 0,
-        transform: 'scale(1) translateY(10px) translateX(100px)',
+        transform: 'scale(1)',
       })),
       { optional: true }
     ),
@@ -21,7 +21,7 @@ import {
       animate('400ms ease-in',
         style({
           opacity: 0,
-          transform: 'scale(1.1) translateY(10px) translateX(-100px)',
+          transform: 'scale(1.3)',
         })),
         { optional: true }
     )

@@ -2,12 +2,12 @@ import { Apollo, gql } from 'apollo-angular';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'df-sidebar',
-  templateUrl: './sidebar.component.html',
+  selector: 'df-book-page',
+  templateUrl: './book-page.component.html',
   styles: [
   ]
 })
-export class SidebarComponent implements OnInit {
+export class BookPageComponent implements OnInit {
 
   constructor(private apollo: Apollo) { }
 
@@ -22,14 +22,11 @@ export class SidebarComponent implements OnInit {
     this.apollo.query({
       query: gql`
       { 
-        me{
-          name
-          profile_photo_url
-          meetings{
+        moviesBooks(type: 2){
+          data{
+            id
+            image
             title
-            questions{
-              title
-            }
           }
         }
       }
@@ -41,11 +38,6 @@ export class SidebarComponent implements OnInit {
     },(error) => {
       console.log(error);
     });
-  }
-  
-  checkout() {
-    window.sessionStorage.removeItem('user')
-    window.location.reload();
   }
 
 }

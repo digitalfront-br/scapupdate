@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Apollo, gql } from 'apollo-angular';
+import UIkit  from 'uikit';
 
 @Component({
   selector: 'df-home-page',
@@ -16,6 +17,15 @@ export class HomePageComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadPersonValue();
+    this.openModal();
+  }
+
+  closeModal(){
+    UIkit.modal('#steps').hide();
+  }
+
+  openModal(){
+    UIkit.modal('#steps').show();
   }
 
   loadPersonValue() {

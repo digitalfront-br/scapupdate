@@ -1,0 +1,41 @@
+<div class="uk-card uk-card-body uk-flex uk-flex-column uk-text-center uk-flex-around uk-height-viewport">
+  <div>
+
+      <form #userLogin="ngForm" (ngSubmit)="onSubmit(userLogin.value)">
+          <div class="uk-margin">
+            <h1>
+              <span class="uk-text-primary">.</span>scap
+            </h1>
+          </div>
+          <div class="uk-margin">
+              <div class="uk-inline uk-width-1-1">
+                  <span class="uk-form-icon" uk-icon="icon: mail"></span>
+                  <input ngModel name="email" class="uk-input uk-border-rounded uk-box-shadow-small" placeholder="Email" type="email"
+                      required>
+              </div>
+          </div>
+          <div class="uk-margin">
+              <div class="uk-inline  uk-width-1-1">
+                  <span class="uk-form-icon" uk-icon="icon: lock"></span>
+                  <input ngModel name="password" class="uk-input uk-border-rounded uk-box-shadow-small" placeholder="Senha"
+                      type="password" min="6" required>
+              </div>
+          </div>
+          <div class="uk-margin">
+              <button type="submit" [disabled]="disableBtn"
+                  class="uk-button uk-button-primary uk-border-rounded uk-box-shadow-small uk-width-1-1">Entrar</button>
+          </div>
+      </form>
+      <div class="uk-flex uk-flex-between">
+
+          <div>
+              <button class="uk-button uk-button-link uk-width-1-1 uk-border-rounded uk-link" [disabled]="disableBtn"
+              routerLink="/forgot">Esqueci a senha</button>
+          </div>
+          <div>
+              <button class="uk-button uk-button-text uk-width-1-1 uk-border-rounded uk-link" [disabled]="disableBtn"
+              routerLink="/register">Criar conta</button>
+          </div>
+      </div>
+  </div>
+</div>
