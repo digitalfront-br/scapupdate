@@ -9,8 +9,12 @@
       </h1>
     </div>
     <div class="uk-grid-small uk-child-width-1-2 uk-margin-bottom" uk-grid="masonry: true">
-      <df-card *ngFor="let item of data.categories.data" tipo="3" [link]="'/categories/'+item.id"
-        [image]="'https://scapgraphql.test/img/'+item.image" [id]="item.id" [title]="item.title"></df-card>
+      <df-card *ngFor="let item of data.categories.data" 
+        tipo="3" 
+        [link]="'/categories/'+item.id"
+        [image]="'https://scapgraphql.test/img/'+item.image" 
+        [id]="item.id" 
+        [title]="item.title"></df-card>
     </div>
   </div>
 </div>
