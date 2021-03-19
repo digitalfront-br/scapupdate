@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DoBootstrap, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import UIkit from 'uikit';
 import { AuthService } from 'src/app/services/auth.service';
+import Dexie from "dexie";
 
 @Component({
   selector: 'df-login-page',
@@ -18,6 +19,8 @@ export class LoginPageComponent implements OnInit {
 
   public messages = null;
   public disableBtn = false;
+  private db: Dexie = null;
+  private table: Dexie.Table<any> = null
   public user = {
     email: '', password: ''
   }
@@ -33,27 +36,33 @@ export class LoginPageComponent implements OnInit {
         timeout: 5000
       });
   }
-  infoSuccess(msg){
-    UIkit.notification({
-      message: `<div class="uk-text-center"><span>Olá ${msg.name}</span></div>`,
-      status: 'success',
-      pos: 'top-center',
-      timeout: 5000
-    });
-}
 
-  onSubmit(body){
+  createDb() {
+    this.db = new Dexie("SCAP_DB");
+    this.db.version(1).stores({
+      user: 'id'
+    });
+    this.table = this.db.table('user');
+  }
+
+  private async saveUser(user) {
+    try {
+      await this.table.add(user);
+    } catch (error) {
+      console.log('Erro: ', error.message);
+    }
+  }
+
+  public onSubmit(body){
     this.disableBtn = true;
-    return this.http.makeLogin(body).subscribe(
-      success => {
-        const user: object = success;
-        window.sessionStorage.setItem('user', JSON.stringify(user))
-        if(window.localStorage.getItem('lista')) {
-          window.localStorage.removeItem('lista')
-        }
+    return this.http.makeLogin(body)
+    .subscribe(
+      user => {
+        this.createDb();
+        this.saveUser(user);
+        window.sessionStorage.setItem('user', JSON.stringify(user));
         this.disableBtn = false;
-        this.infoSuccess(user)
-        return this.router.navigate(['/'])
+        return this.router.navigate(['/']);
       },
       error => {
         this.messages = error.error

@@ -4,17 +4,20 @@
   </div>
   <div *ngIf="data?.categories?.data">
     <div class="uk-width-1-1">
-      <h1 class="uk-heading-bullet uk-h5 uk-text-primary">
-        Categorias
-      </h1>
+      <h1 class="uk-heading-bullet uk-h5 uk-text-primary">Categorias</h1>
     </div>
-    <div class="uk-grid-small uk-child-width-1-2 uk-margin-bottom" uk-grid="masonry: true">
-      <df-card *ngFor="let item of data.categories.data" 
-        tipo="3" 
-        [link]="'/categories/'+item.id"
-        [image]="'https://scapgraphql.test/img/'+item.image" 
-        [id]="item.id" 
-        [title]="item.title"></df-card>
+    <div
+      class="uk-grid-small uk-child-width-1-2 uk-margin-bottom"
+      uk-grid="masonry: true"
+    >
+      <df-card
+        *ngFor="let item of data.categories.data"
+        tipo="3"
+        [link]="'/categories/' + item.id"
+        [image]="'http://localhost:8000/img/' + item.image"
+        [id]="item.id"
+        [title]="item.title"
+      ></df-card>
     </div>
   </div>
 </div>

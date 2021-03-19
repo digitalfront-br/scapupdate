@@ -8,7 +8,7 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  public url: string = "https://scapgraphql.test/api/auth/";
+  public url: string = "http://localhost:8000/api/auth/";
   public headers = { 'content-type': 'application/json' };
 
   makeLogin(body) {
