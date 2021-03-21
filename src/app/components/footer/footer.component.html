@@ -16,14 +16,40 @@
         <i data-feather="list"></i>
       </div>
       <div
-        (click)="btnEdit = !btnEdit"
         [class.uk-hidden]="btnEdit"
         class="menu-item add uk-border-circle uk-padding-small waves-float"
       >
-        <i data-feather="plus"></i>
+        <a class="uk-link-reset" href="#modal-meeting" uk-toggle>
+          <i data-feather="plus"></i>
+        </a>
+      </div>
+      <div id="modal-meeting" class="uk-flex-top uk-padding" uk-modal>
+        <div
+          class="uk-modal-dialog uk-margin-auto-vertical uk-padding uk-border-rounded"
+        >
+          <p>Dê um nome para identificar sua lista</p>
+          <div class="uk-margin">
+            <input
+              type="text"
+              placeholder="nome da sua lista"
+              class="uk-input uk-border-rounded"
+            />
+          </div>
+          <div class="uk-flex uk-flex-between">
+            <a
+              class="uk-button uk-width-1-1 uk-button-muted uk-border-rounded uk-modal-close"
+              >Cancelar</a
+            >
+            <a
+              (click)="btnEdit = !btnEdit; setEditMode(true)"
+              class="uk-button uk-width-1-1 uk-button-primary uk-border-rounded uk-modal-close"
+              >Iniciar</a
+            >
+          </div>
+        </div>
       </div>
       <div
-        (click)="btnEdit = !btnEdit"
+        (click)="btnEdit = !btnEdit; setEditMode(false)"
         [class.uk-hidden]="!btnEdit"
         class="menu-item check uk-border-circle uk-padding-small waves-float"
       >

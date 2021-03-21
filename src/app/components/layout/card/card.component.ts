@@ -14,8 +14,10 @@ export class CardComponent implements OnInit {
   @Input() tipo: Number;
 
   constructor() { }
+  public edit;
 
   ngOnInit(): void {
+    this.edit = JSON.parse(window.sessionStorage.getItem('editMode'));
   }
 
 }

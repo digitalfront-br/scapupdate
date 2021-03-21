@@ -38,6 +38,9 @@ input.uk-checkbox {
 .uk-offcanvas-flip .main {
   filter: blur(1px);
 }
+.uk-background-success {
+  background-color: $global-success-background;
+}
 .title-fixed {
   left: 0;
   width: 100% !important;

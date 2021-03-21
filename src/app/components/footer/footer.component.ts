@@ -16,4 +16,8 @@ export class FooterComponent implements OnInit {
     Feather.replace();
   }
 
+  public setEditMode(mode) {
+    window.sessionStorage.setItem('editMode', JSON.stringify(mode));
+  }
+
 }

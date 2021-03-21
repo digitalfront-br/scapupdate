@@ -2,7 +2,7 @@
   <div *ngIf="loading">
     <div uk-spinner></div>
   </div>
-  <div *ngIf="data?.categories">
+  <div *ngIf="data?.categories" class="uk-margin-bottom">
     <div class="uk-width-1-1 uk-flex uk-flex-between">
       <h1 class="uk-heading-bullet uk-h5 uk-text-primary">Categorias</h1>
       <a class="uk-text-small" routerLink="/categories"
@@ -34,6 +34,41 @@
       </ul>
     </div>
   </div>
-
+  <div *ngIf="data?.movies" class="uk-margin-bottom">
+    <div class="uk-width-1-1 uk-flex uk-flex-between">
+      <h1 class="uk-heading-bullet uk-h5 uk-text-primary">Filmes</h1>
+      <a class="uk-text-small" routerLink="/categories"
+        >Todas ({{ data.movies.count.total }})</a
+      >
+    </div>
+    <div>
+      <df-card
+        tipo="2"
+        *ngFor="let movie of data.movies.data"
+        [title]="movie.title"
+      ></df-card>
+    </div>
+    <li class="uk-flex uk-flex-middle uk-flex-center">
+      <a routerLink="/movies" class="uk-link-reset uk-text-primary">+ mais</a>
+    </li>
+  </div>
+  <div *ngIf="data?.books" class="uk-margin-bottom">
+    <div class="uk-width-1-1 uk-flex uk-flex-between">
+      <h1 class="uk-heading-bullet uk-h5 uk-text-primary">Livros</h1>
+      <a class="uk-text-small" routerLink="/categories"
+        >Todas ({{ data.books.count.total }})</a
+      >
+    </div>
+    <div>
+      <df-card
+        tipo="2"
+        *ngFor="let book of data.books.data"
+        [title]="book.title"
+      ></df-card>
+    </div>
+    <li class="uk-flex uk-flex-middle uk-flex-center">
+      <a routerLink="/books" class="uk-link-reset uk-text-primary">+ mais</a>
+    </li>
+  </div>
   <df-steps></df-steps>
 </div>

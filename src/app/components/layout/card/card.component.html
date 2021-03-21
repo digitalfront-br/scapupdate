@@ -7,8 +7,11 @@
   </div>
   <div
     *ngSwitchCase="2"
-    class="uk-card uk-margin-small uk-padding-xxsmall uk-card-default uk-border-rounded"
+    class="uk-card uk-margin-small uk-padding-xxsmall uk-card-default uk-border-rounded uk-flex uk-flex-middle"
   >
+    <div *ngIf="edit" class="uk-margin-small-right">
+      <input type="text" class="uk-checkbox" />
+    </div>
     <p class="uk-margin-remove">{{ title }}</p>
   </div>
   <div *ngSwitchCase="3">
