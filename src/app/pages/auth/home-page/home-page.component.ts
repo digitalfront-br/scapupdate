@@ -25,15 +25,13 @@ export class HomePageComponent implements OnInit {
     this.openModal();
   }
 
- 
-
-  closeModal(){
-    pristine = false;
-    UIkit.modal('#steps').hide();
+  completeWizard() {
+    window.sessionStorage.setItem('wizard', JSON.stringify({status: 'disabled'}))
   }
 
   openModal(){
-    if(pristine){
+    const pristine = JSON.parse(window.sessionStorage.getItem('wizard'));
+    if(!pristine){
       UIkit.modal('#steps').show();
     }
   }

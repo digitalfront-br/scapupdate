@@ -8,13 +8,14 @@ html {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
-body, html {
+body,
+html {
   background-color: $global-muted-background;
-  min-height: 100vh
+  min-height: 100vh;
 }
-.uk-notification-message{
+.uk-notification-message {
   @include hook-card-default();
-  border-radius: 3px ;
+  border-radius: 3px;
   box-shadow: 1px 2px 3px rgba(37, 67, 90, 0.09);
   &.uk-notification-message-danger {
     background-color: $global-danger-background;
@@ -32,9 +33,9 @@ input.uk-checkbox {
 }
 :focus {
   outline: none;
-    color: $global-primary-background;
+  color: $global-primary-background;
 }
-.uk-offcanvas-flip  .main {
+.uk-offcanvas-flip .main {
   filter: blur(1px);
 }
 .title-fixed {
@@ -42,8 +43,8 @@ input.uk-checkbox {
   width: 100% !important;
   padding: 10px 15px;
 }
-ul.uk-slider-items.uk-grid:first-child {
-  margin-left: 0
+ul.uk-slider-items > li.uk-active:first-child {
+  margin-left: 0;
 }
 .card {
   @include hook-card-default();
@@ -56,41 +57,40 @@ ul.uk-slider-items.uk-grid:first-child {
   }
 }
 .footer {
-  background: linear-gradient(to top,  #fff 70%, transparent 100%);
+  background: linear-gradient(to top, #fff 70%, transparent 100%);
 }
 .uk-overlay-default {
-  background: linear-gradient( 360deg , #edf2f4 10%, #0000 60%) !important;
+  background: linear-gradient(360deg, #edf2f4 10%, #0000 60%) !important;
   bottom: -1px !important;
   left: -1px !important;
   right: -1px !important;
 }
-.uk-heading-bullet::before{
+.uk-heading-bullet::before {
   border-color: #b7b4f2 !important;
 }
 .menu {
   border-radius: 20px;
   @include hook-card-default();
   border: 1px solid rgb(199 199 199 / 48%);
-  .menu-item{
-      color: lighten($global-primary-background, 15%);
-    &.add{
+  .menu-item {
+    color: lighten($global-primary-background, 15%);
+    &.add {
       margin-top: 0;
       padding: 5px;
       background-color: $global-primary-background;
-      color: rgba(255,255,255,0.8);
+      color: rgba(255, 255, 255, 0.8);
       box-shadow: none;
       transform: scale(1);
     }
-    &.check{
-      margin-top: -20px;
+    &.check {
+      margin: -10px;
       // padding: 15px;
-      background-color: $global-primary-background;
-      color: rgba(255,255,255,0.8);
-      box-shadow: 0 1px 20px 1px $global-primary-background;
+      background-color: $global-danger-background;
+      color: rgba(255, 255, 255, 0.8);
+      box-shadow: 0 1px 20px 1px $global-danger-background;
       transform: scale(1);
-      margin-left: -15px;
     }
-    &.uk-active{
+    &.uk-active {
       color: $global-primary-background;
     }
   }
@@ -102,7 +102,11 @@ ul.uk-slider-items.uk-grid:first-child {
   padding: 5px 10px;
 }
 .uk-offcanvas-bar {
-  background: linear-gradient(to top right, darken($global-primary-background, 10%) 10%, $global-primary-background 100%) !important;
+  background: linear-gradient(
+    to top right,
+    darken($global-primary-background, 10%) 10%,
+    $global-primary-background 100%
+  ) !important;
 }
 
 .title-section::after {

@@ -9,7 +9,8 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   public url: string = "http://localhost:8000/api/auth/";
-  public headers = { 'content-type': 'application/json' };
+  public url2: string = "http://localhost:8000/";
+  public headers = { 'content-type': 'application/json', 'Access-Control-Allow-Origin': '*/*' };
 
   makeLogin(body) {
     return this.http.post(this.url+'login', body, {headers: this.headers});
@@ -18,6 +19,6 @@ export class AuthService {
     return this.http.post(this.url+'create-account', body,  {headers: this.headers});
   }
   makeForgot(body) {
-    return this.http.post(this.url+'forgot-password', body,  {headers: this.headers});
+    return this.http.post(this.url2+'forgot-password', body,  {headers: this.headers});
   }
 }

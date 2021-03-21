@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import UIkit from 'uikit';
 import { AuthService } from 'src/app/services/auth.service';
 import Dexie from "dexie";
+import {createDb} from 'src/app/storage/db'
 
 @Component({
   selector: 'df-login-page',
@@ -13,14 +14,14 @@ import Dexie from "dexie";
 export class LoginPageComponent implements OnInit {
 
   constructor(public http: AuthService, private router: Router) { }
-
+  
   ngOnInit(): void {
   }
 
   public messages = null;
   public disableBtn = false;
   private db: Dexie = null;
-  private table: Dexie.Table<any> = null
+  private table: Dexie.Table<any> = null;
   public user = {
     email: '', password: ''
   }
@@ -29,6 +30,7 @@ export class LoginPageComponent implements OnInit {
       UIkit.notification({
         message: `<div class="uk-text-center">
         ${ msg['email'] ? '<span>'+msg['email']+'</span><br>' : '' }
+        ${ msg['status'] ? '<span>'+msg['status']+'</span><br>' : '' }
         ${ msg['password'] ? '<span>'+msg['password']+'</span>' : '' }
         </div>`,
         status: 'danger',
@@ -65,9 +67,10 @@ export class LoginPageComponent implements OnInit {
         return this.router.navigate(['/']);
       },
       error => {
-        this.messages = error.error
-        this.infoDanger(error.error)
-        this.disableBtn = false
+        this.messages = error.error;
+        this.infoDanger(error.error);
+        console.log(error)
+        this.disableBtn = false;
       }
       
     );

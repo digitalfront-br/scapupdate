@@ -26,6 +26,7 @@ import { MoviePageComponent } from './pages/auth/movie-page/movie-page.component
 import { BookPageComponent } from './pages/auth/book-page/book-page.component';
 import { BookPageDetailComponent } from './pages/auth/book-page-detail/book-page-detail.component';
 import { MoviePageDetailComponent } from './pages/auth/movie-page-detail/movie-page-detail.component';
+import { StepsComponent } from './components/layout/steps/steps.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { MoviePageDetailComponent } from './pages/auth/movie-page-detail/movie-p
     MoviePageComponent,
     BookPageComponent,
     BookPageDetailComponent,
-    MoviePageDetailComponent
+    MoviePageDetailComponent,
+    StepsComponent
   ],
   imports: [
     BrowserModule,

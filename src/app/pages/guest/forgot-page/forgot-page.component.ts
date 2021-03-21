@@ -46,6 +46,7 @@ infoSuccess(msg){
         return this.router.navigate(['/login'])
       },
       error => {
+        console.log(error)
         this.infoDanger(error.error),
         this.disableBtn = false;
       }

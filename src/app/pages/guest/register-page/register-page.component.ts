@@ -25,6 +25,7 @@ export class RegisterPageComponent implements OnInit {
       ${ msg['name'] ? '<span>'+msg['name']+'</span><br>' : '' }
       ${ msg['phone'] ? '<span>'+msg['phone']+'</span><br>' : '' }
       ${ msg['email'] ? '<span>'+msg['email']+'</span><br>' : '' }
+      ${ msg['status'] ? '<span>'+msg['status']+'</span><br>' : '' }
       ${ msg['password'] ? '<span>'+msg['password']+'</span>' : '' }
       </div>`,
       status: 'danger',
@@ -51,6 +52,7 @@ infoSuccess(msg){
       },
       error => {
         this.infoDanger(error.error),
+        console.log(error)
         this.disableBtn = false;
       }
       
