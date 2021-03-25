@@ -27,6 +27,8 @@ import { BookPageComponent } from './pages/auth/book-page/book-page.component';
 import { BookPageDetailComponent } from './pages/auth/book-page-detail/book-page-detail.component';
 import { MoviePageDetailComponent } from './pages/auth/movie-page-detail/movie-page-detail.component';
 import { StepsComponent } from './components/layout/steps/steps.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -59,7 +61,8 @@ import { StepsComponent } from './components/layout/steps/steps.component';
     FormsModule,
     AppRoutingModule,
     GraphQLModule,
-    HttpClientModule
+    HttpClientModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]

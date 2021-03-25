@@ -8,8 +8,8 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  public url: string = "http://localhost:8000/api/auth/";
-  public url2: string = "http://localhost:8000/";
+  public url: string = "https://api.sccap.com.br/api/auth/";
+  public url2: string = "https://api.sccap.com.br/";
   public headers = { 'content-type': 'application/json', 'Access-Control-Allow-Origin': '*/*' };
 
   makeLogin(body) {

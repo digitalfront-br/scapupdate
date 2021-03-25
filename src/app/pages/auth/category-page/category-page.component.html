@@ -14,7 +14,7 @@
         *ngFor="let item of data.categories.data"
         tipo="3"
         [link]="'/categories/' + item.id"
-        [image]="'http://localhost:8000/img/' + item.image"
+        [image]="'https://api.sccap.com.br/img/' + item.image"
         [id]="item.id"
         [title]="item.title"
       ></df-card>
