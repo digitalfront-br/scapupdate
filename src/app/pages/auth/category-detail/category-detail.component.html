@@ -8,7 +8,7 @@
         class="uk-background-cover uk-height-medium uk-panel uk-flex uk-flex-bottom"
         style="background-image: url('http://localhost:8000/img/{{
           data?.category.image
-        }}');"
+        }}')"
       >
         <div class="uk-overlay-default uk-position-cover"></div>
         <div class="uk-overlay uk-position-bottom uk-dark uk-padding-small">
@@ -26,6 +26,8 @@
         tipo="2"
         *ngFor="let question of data.category.questions"
         [title]="question.title"
+        entidade="questions"
+        [id]="question.id"
       ></df-card>
     </div>
   </div>

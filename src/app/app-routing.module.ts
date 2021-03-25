@@ -27,7 +27,7 @@ const routes: Routes = [
     { path: 'questions/:id', component: QuestionDetailComponent, data:{ animation: 'isQuestionDetail' } },
     { path: 'movies', component: MoviePageComponent, data:{ animation: 'isMovie' } },
     { path: 'books', component: BookPageComponent, data:{ animation: 'isBook' } },
-    { path: 'meetings', component: MeetingPageComponent, data:{ animation: 'isMeeting' } },
+    { path: 'meetings/:id', component: MeetingPageComponent, data:{ animation: 'isMeeting' } },
    ],
    canActivate: [AuthenticateGuard]
   },
