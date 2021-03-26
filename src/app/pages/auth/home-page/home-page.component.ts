@@ -40,19 +40,12 @@ export class HomePageComponent implements OnInit {
     this.apollo.query({
       query: gql`
       { 
-        questions(first: 10){
-          count:paginatorInfo{
-            total
-          }
-          data{
-            title
-          }
-        }
         movies:moviesBooks(first: 5, type: 1){
           count:paginatorInfo{
             total
           }
           data{
+            id
             title
           }
         }
@@ -61,6 +54,7 @@ export class HomePageComponent implements OnInit {
             total
           }
           data{
+            id
             title
           }
         }

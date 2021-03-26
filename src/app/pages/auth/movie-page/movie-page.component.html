@@ -1,17 +1,18 @@
-<div class="uk-container uk-margin-xlarge-bottom" >
+<div class="uk-container uk-margin-xlarge-bottom">
   <div *ngIf="loading">
     <div uk-spinner></div>
   </div>
   <div *ngIf="data?.moviesBooks?.data">
     <div class="uk-width-1-1">
-      <h1 class="uk-heading-bullet uk-h5 uk-text-primary">
-        Filmes
-      </h1>
+      <h1 class="uk-heading-bullet uk-h5 uk-text-primary">Filmes</h1>
     </div>
-    <df-card *ngFor="let item of data.moviesBooks.data"
-    tipo="5"
-    [id]="item.id"
-    [image]="item.image"
-    [title]="item.title"></df-card>
+    <df-card
+      *ngFor="let item of data.moviesBooks.data"
+      tipo="5"
+      [id]="item.id"
+      entidade="movies"
+      [image]="item.image"
+      [title]="item.title"
+    ></df-card>
   </div>
 </div>

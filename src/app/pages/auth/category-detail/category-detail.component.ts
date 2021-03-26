@@ -28,6 +28,7 @@ export class CategoryDetailComponent implements OnInit {
           title
           image
           questions {
+            id
             title
           }
         }

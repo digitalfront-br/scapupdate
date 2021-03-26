@@ -27,6 +27,7 @@ export class SidebarComponent implements OnInit {
           name
           profile_photo_url
           meetings{
+            id
             title
             questions{
               title

@@ -1,13 +1,16 @@
 <div class="uk-container">
   <div class="uk-width-1-1">
-    <h1 class="uk-heading-bullet uk-h5 uk-text-primary">
-      Ferramentas
-    </h1>
+    <h1 class="uk-heading-bullet uk-h5 uk-text-primary">Ferramentas</h1>
   </div>
   <div class="uk-width-1-1">
-    <h1 class="uk-heading-bullet uk-h5 uk-text-primary">
-      Listas
+    <h1 class="uk-h2 uk-text-primary">
+      {{ data?.meeting.title }}
     </h1>
+    <df-card
+      *ngFor="let question of data.meeting.questions"
+      [title]="item.title"
+      tipo="2"
+    ></df-card>
   </div>
 </div>
 <p>meeting-page works!</p>

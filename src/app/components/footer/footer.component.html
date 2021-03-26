@@ -31,6 +31,7 @@
           <div class="uk-margin">
             <input
               type="text"
+              [(ngModel)]="meeting"
               placeholder="nome da sua lista"
               class="uk-input uk-border-rounded"
             />
@@ -41,7 +42,9 @@
               >Cancelar</a
             >
             <a
-              (click)="btnEdit = !btnEdit; setEditMode(true)"
+              (click)="
+                btnEdit = true; setEditMode(true); createMeetingList(meeting)
+              "
               class="uk-button uk-width-1-1 uk-button-primary uk-border-rounded uk-modal-close"
               >Iniciar</a
             >
@@ -49,7 +52,7 @@
         </div>
       </div>
       <div
-        (click)="btnEdit = !btnEdit; setEditMode(false)"
+        (click)="btnEdit = false; setEditMode(false); saveList()"
         [class.uk-hidden]="!btnEdit"
         class="menu-item check uk-border-circle uk-padding-small waves-float"
       >

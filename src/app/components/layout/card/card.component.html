@@ -6,7 +6,7 @@
   <div *ngSwitchCase="2"
     class="uk-card uk-margin-small uk-padding-xxsmall uk-card-default uk-border-rounded uk-flex uk-flex-middle">
     <div *ngIf="edit" class="uk-margin-small-right">
-      <input type="checkbox" class="uk-checkbox" />
+      <input type="checkbox" class="uk-checkbox" (change)="addMeetingList(id)" />
     </div>
     <p class="uk-margin-remove">{{ title }}</p>
   </div>
@@ -25,17 +25,23 @@
     <small class="uk-text-small">{{ title }}</small>
   </div>
   <div *ngSwitchCase="5">
-    <div [routerLink]="link" class="uk-card uk-card-default uk-grid-collapse uk-margin" uk-grid>
-      <div class="uk-card-media-left uk-cover-container">
-        <img [src]="image" alt="" uk-cover />
-        <canvas width="100" height="100"></canvas>
-      </div>
-      <div class="uk-width-expand">
-        <div class="uk-card-body">
-          <h3 class="uk-h4">{{ title }}</h3>
+    <<<<<<< HEAD <div [routerLink]="link" class="uk-card uk-card-default uk-grid-collapse uk-margin" uk-grid>
+      =======
+      <div [routerLink]="link" class="uk-card uk-card-default uk-grid-collapse uk-margin" uk-grid>
+        <div *ngIf="edit" class="uk-margin-small-right">
+          <input type="checkbox" class="uk-checkbox" (change)="addMeetingList(id)" />
+        </div>
+        >>>>>>> 1790d1a103a4b929a7508af9d664a08ad2c71106
+        <div class="uk-card-media-left uk-cover-container">
+          <img [src]="image" alt="" uk-cover />
+          <canvas width="100" height="100"></canvas>
+        </div>
+        <div class="uk-width-expand">
+          <div class="uk-card-body">
+            <h3 class="uk-h4">{{ title }}</h3>
+          </div>
         </div>
       </div>
-    </div>
   </div>
   <div *ngSwitchCase="6">
     <div [routerLink]="link" class="uk-card uk-card-small uk-card-default uk-margin-small uk-border-rounded">
